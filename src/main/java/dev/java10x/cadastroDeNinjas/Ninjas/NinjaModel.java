@@ -1,4 +1,4 @@
-package dev.java10x.cadastroDeNinjas;
+package dev.java10x.cadastroDeNinjas.Ninjas;
 
 import jakarta.persistence.*;
 
@@ -13,6 +13,7 @@ public class NinjaModel {
   private String nome;
   private String email;
   private int idade;
+  private List<MissoesModel> missoes;
 
   public NinjaModel() {}
 
