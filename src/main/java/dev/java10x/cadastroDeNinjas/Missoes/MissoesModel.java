@@ -2,11 +2,17 @@ package dev.java10x.cadastroDeNinjas.Missoes;
 
 import dev.java10x.cadastroDeNinjas.Ninjas.NinjaModel;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Entity
 @Table(name = "tb_missoes")
+@Data // Gera Getters and Setters
+@NoArgsConstructor // Gera um Construtor sem argumentos
+@AllArgsConstructor // Gera um Construtor com argumentos
 public class MissoesModel {
 
   @Id
@@ -19,24 +25,4 @@ public class MissoesModel {
   @OneToMany(mappedBy = "missoes") // @OneToMany - UNICA missao tem MUITOS ninjas
   private List<NinjaModel> ninjas;
 
-  public MissoesModel(){}
-
-  public MissoesModel(String dificuldade, String nome) {
-    this.dificuldade = dificuldade;
-    this.nome = nome;
-  }
-
-  public String getNome() {
-    return nome;
-  }
-  public void setNome(String nome) {
-    this.nome = nome;
-  }
-
-  public String getDificuldade() {
-    return dificuldade;
-  }
-  public void setDificuldade(String dificuldade) {
-    this.dificuldade = dificuldade;
-  }
 }
